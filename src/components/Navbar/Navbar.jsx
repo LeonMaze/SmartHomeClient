@@ -26,8 +26,10 @@ function Navbar() {
                         {NavbarNames.map((i, idx) => {
                             return (
                                 <li key={idx}>
-                                    <NavLink to={i.path} className={i.classnme}>
-                                        {i.icon}
+                                    <NavLink to={i.path} className="navbar-item">
+                                        <div className={i.classname}>
+                                            {i.icon}
+                                        </div>
                                         {active && <span> {i.title} </span>}
                                     </NavLink>
                                 </li>
