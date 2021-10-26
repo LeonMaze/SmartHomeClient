@@ -3,7 +3,7 @@ import "./App.sass";
 import Navbar from './components/Navbar/Navbar';
 import Dashboard from './pages/Dashboard'
 import Home from './pages/Home'
-import Statistic from './pages/Statistics';
+import Statistics from './pages/Statistics';
 
 function App() {
   return (
