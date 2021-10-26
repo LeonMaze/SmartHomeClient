@@ -7,19 +7,19 @@ export const NavbarNames = [
     {
         title: 'Dashboard',
         path: '/dashboard',
-        icon: <FaIcons.FaTachometerAlt/>,
-        classnme: 'navnames-text'
+        icon: <FaIcons.FaTachometerAlt size="32"/>,
+        classnme: 'navbar-item'
     },
     {
         title: 'Home',
         path: '/home',
-        icon: <AiIcons.AiOutlineHome/>,
-        classnme: 'navnames-text'
+        icon: <AiIcons.AiOutlineHome size="32"/>,
+        classnme: 'navbar-item'
     },
     {
         title: 'Statistics',
         path: '/statistics',
-        icon: <IoIcons.IoIosStats/>,
-        classnme: 'navnames-text'
+        icon: <IoIcons.IoIosStats size="32"/>,
+        classnme: 'navbar-item'
     }
 ]
