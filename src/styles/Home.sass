@@ -1,0 +1,51 @@
+
+.actions
+    padding: 30px
+    width: 100%
+    display: flex
+    justify-content: space-between
+
+    button
+        outline: none
+        border: none
+        border-radius: 15px
+        background: #fff
+        padding: 10px
+        box-shadow: 0px 1px 10px 2px rgba(34, 60, 80, 0.08)
+        cursor: pointer
+        margin: 0px 10px
+
+        &:first-child 
+            margin-left: 0px
+        &:last-child
+            margin-right: 0px
+
+
+.rooms
+    margin-top: 15px
+    display: flex
+    flex-wrap: wrap
+
+    .card
+        cursor: pointer
+        margin: 30px
+        flex: 1
+        height: 400px
+
+        &-icon
+            height: 270px
+            width: 100%
+            display: flex
+            justify-content: center
+            align-items: center
+
+        &-title
+            font-weight: bold
+            font-size: 32px
+            text-align: center
+
+        &-description
+            text-align: center
+            font-size: 20px
+            color: gray
+

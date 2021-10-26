@@ -1,36 +1,47 @@
 import React from 'react'
 import * as MdIcons from 'react-icons/md';
 import * as AiIcons from 'react-icons/ai';
+import { NavLink } from "react-router-dom";
 
-import "./Card.sass";
+import "./Item.sass";
 
-function Card() {
+function Item() {
     return (
-        <div className = "card">
-            <div className = "card-item">
-                <span className="card-icon">
-                    <MdIcons.MdOutlineChair size="60"/>
+        <div className="item">
+            <div className="item-item">
+                <span className="item-icon">
+                    <MdIcons.MdOutlineChair size="60" />
                 </span>
-                <span className="card-title"> Office</span>
-                <div className="card-datacontainer">
-                    <span className="card-tempdata">
-                        3 
+                <span className="item-title"> Office</span>
+                <div className="item-datacontainer">
+                    <span className="item-tempdata">
+                        3
                     </span>
-                    <span className="card-title"> x Devices</span>    
+                    <span className="item-title"> x Devices</span>
                 </div>
             </div>
 
-            <div className = "card-item">
-                <div className="card-datacontainer">
-                    <span className="card-tempdata">
+            <div className="item-item">
+                <div className="item-datacontainer">
+                    <span className="item-tempdata">
                         28 &deg;C <AiIcons.AiOutlineArrowUp />
                     </span>
                 </div>
-                <span className="card-title">Temperature</span>    
+                <span className="item-title">Temperature</span>
             </div>
-                 
+
+            <NavLink to="/light" className="item-item">
+                <div className="item-datacontainer">
+                    <span className="item-tempdata">
+                        28 &deg;C <AiIcons.AiOutlineArrowUp />
+                    </span>
+                </div>
+                <span className="item-title">Light illumination</span>
+            </NavLink>
+
+
         </div>
     )
 }
 
-export default Card
+export default Item

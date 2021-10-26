@@ -1,11 +1,13 @@
 import React from 'react'
+import Item from '../components/Item/Item'
 
 const Room = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+            <h1>Room</h1>
+            <Item />
+        </>
     )
 }
 
-export default Room 
+export default Room

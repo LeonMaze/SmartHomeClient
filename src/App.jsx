@@ -3,6 +3,8 @@ import "./App.sass";
 import Navbar from './components/Navbar/Navbar';
 import Dashboard from './pages/Dashboard'
 import Home from './pages/Home'
+import Light from './pages/Light';
+import Room from './pages/Room';
 import Statistics from './pages/Statistics';
 
 function App() {
@@ -10,17 +12,25 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
-        <Switch>
-          <Route path="/home">
-            <Home />
-          </Route>
-          <Route path="/statistics">
-            <Statistics />
-          </Route>
-          <Route path="/">
-            <Dashboard />
-          </Route>
-        </Switch>
+        <div className="page-wrapper">
+          <Switch>
+            <Route path="/home">
+              <Home />
+            </Route>
+            <Route path="/statistics">
+              <Statistics />
+            </Route>
+            <Route path="/room">
+              <Room />
+            </Route>
+            <Route path="/light">
+              <Light />
+            </Route>
+            <Route path="/">
+              <Dashboard />
+            </Route>
+          </Switch>
+        </div>
       </Router>
     </div>
   );

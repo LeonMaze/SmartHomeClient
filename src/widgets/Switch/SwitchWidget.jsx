@@ -11,7 +11,7 @@ const SwitchWidget = ({ title, description, toggle }) => {
 
     const handleToggle = () =>{
         setIsOn(!isOn)
-        toggle()
+        toggle?.()
     } 
 
     return (
