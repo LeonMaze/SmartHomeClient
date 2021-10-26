@@ -3,7 +3,7 @@ import "./Card.sass"
 
 const Card = (props) => {
     return (
-        <div className="card">
+        <div {...props} className="card">
             {props.children}
         </div>
     )
