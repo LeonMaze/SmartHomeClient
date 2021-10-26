@@ -1,5 +1,6 @@
 import React from 'react'
 import SwitchWidget from '../widgets/Switch/SwitchWidget'
+import Card from '../components/Item/Item'
 
 const Dashboard = () => {
     return (
@@ -10,6 +11,7 @@ const Dashboard = () => {
                     title="My Widget"
                     description="It's working!!!"/>
             </div>
+            <Card />
         </div>
     )
 }
