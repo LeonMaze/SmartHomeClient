@@ -23,9 +23,9 @@ export const NavbarNames = [
         classname: 'icon green'
     },
     {
-        title: 'Room',
-        path: '/room',
-        icon: <IoIcons.IoIosStats size="32" color="#fff"/>,
+        title: 'Devices',
+        path: '/devices',
+        icon: <IoIcons.IoIosDesktop size="32" color="#fff"/>,
         classname: 'icon green'
     }
 ]

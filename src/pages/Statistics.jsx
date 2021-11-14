@@ -4,6 +4,7 @@ const Statistics = () => {
     return (
         <>
             <h1>Statistic</h1>
+
         </>
     )
 }

@@ -4,7 +4,7 @@ import Navbar from './components/Navbar/Navbar';
 import Dashboard from './pages/Dashboard'
 import Home from './pages/Home'
 import Light from './pages/Light';
-import Room from './pages/Room';
+import Devices from './pages/Devices';
 import Statistics from './pages/Statistics';
 
 function App() {
@@ -20,8 +20,8 @@ function App() {
             <Route path="/statistics">
               <Statistics />
             </Route>
-            <Route path="/room">
-              <Room />
+            <Route path="/devices">
+              <Devices />
             </Route>
             <Route path="/light">
               <Light />

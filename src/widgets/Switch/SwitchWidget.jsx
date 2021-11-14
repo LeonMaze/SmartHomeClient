@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
-import Card from '../../components/Card/Card'
-import VerticalSwitch from '../../components/Switch/VerticalSwitch'
+import Card from '../../components/Cards/Card'
 import * as AiIcons from 'react-icons/ai';
 
 import "./SwitchWidget.sass"
+import SwitchCheckbox from '../../components/Switch/SwitchCheckbox';
 
-const SwitchWidget = ({ title, description, toggle }) => {
+const SwitchWidget = ({ title, description, toggle, switchId }) => {
 
-    const [isOn, setIsOn] = useState(true);
+    const [isToggle, setIsToggle] = useState(true);
 
     const handleToggle = () =>{
-        setIsOn(!isOn)
+        setIsToggle(!isToggle)
         toggle?.()
     } 
 
@@ -29,8 +29,10 @@ const SwitchWidget = ({ title, description, toggle }) => {
                             {description}
                         </div>
                     </div>
-                    <VerticalSwitch
-                        isOn={isOn}
+                    <SwitchCheckbox
+                        switchId={switchId}
+                        orientation="vertical"
+                        isToggle={isToggle}
                         onColor="#6DF9BE"
                         handleToggle={handleToggle}
                     />
