@@ -1,5 +1,4 @@
 import React from 'react'
-import * as IoIcons from 'react-icons/io';
 
 import "../styles/Devices.sass"
 import NewDevicesList from '../components/Devices/NewDevicesList';

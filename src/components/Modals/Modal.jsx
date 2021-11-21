@@ -4,17 +4,17 @@ import * as AiIcons from 'react-icons/ai';
 
 import "./Modal.sass"
 
-const Modal = ({visible, setVisible, title, children}) => {
+const Modal = ({ visible, setVisible, title, children }) => {
 
     return (
         <>
-            {visible && 
+            {visible &&
                 <div className="modal-wrapper" onClick={() => setVisible(false)}>
                     <div className="modal" onClick={(e) => e.stopPropagation()}>
                         <Card>
                             <div className="modal-header">
                                 <p>{title}</p>
-                                <AiIcons.AiOutlineClose size="24" onClick={() => setVisible(false)}/>
+                                <AiIcons.AiOutlineClose cursor="pointer" size="24" onClick={() => setVisible(false)} />
                             </div>
                             <div className="modal-content">
                                 {children}

@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Card from '../components/Cards/Card'
-import SwitchCheckbox from '../components/Switch/SwitchCheckbox'
 import SwitchWidget from '../widgets/Switch/SwitchWidget'
 import * as AiIcons from 'react-icons/ai';
 

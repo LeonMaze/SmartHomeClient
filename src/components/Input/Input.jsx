@@ -1,10 +1,10 @@
 import React from 'react'
 import "./Input.sass"
 
-const Input = ({type, placeholder}) => {
+const Input = (props) => {
     return (
         <>
-            <input type={type || "text"} className="input" placeholder={placeholder} />
+            <input {...props} type={props.type || "text"} className="input" placeholder={props.placeholder} />
         </>
     )
 }

@@ -11,8 +11,14 @@ export const NavbarNames = [
         classname: 'icon blue'
     },
     {
-        title: 'Home',
-        path: '/home',
+        title: 'Homes',
+        path: '/homes',
+        icon: <AiIcons.AiOutlineHome size="32" color="#fff"/>,
+        classname: 'icon red'
+    },
+    {
+        title: 'Rooms',
+        path: '/rooms',
         icon: <AiIcons.AiOutlineHome size="32" color="#fff"/>,
         classname: 'icon red'
     },

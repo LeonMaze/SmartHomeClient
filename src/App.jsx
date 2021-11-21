@@ -1,29 +1,42 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import "./App.sass";
 import Navbar from './components/Navbar/Navbar';
 import Dashboard from './pages/Dashboard'
-import Home from './pages/Home'
+import Homes from './pages/Homes'
 import Light from './pages/Light';
 import Devices from './pages/Devices';
 import Statistics from './pages/Statistics';
+import Rooms from './pages/Rooms';
+import Home from './pages/Home';
+import Device from './pages/Device';
 
 function App() {
+
   return (
     <div className="App">
-      <Router>
+      <BrowserRouter >
         <Navbar />
         <div className="page-wrapper">
           <Switch>
-            <Route path="/home">
+            <Route exact path="/homes/:id">
               <Home />
             </Route>
-            <Route path="/statistics">
+            <Route exact path="/homes">
+              <Homes />
+            </Route>
+            <Route exact path="/rooms">
+              <Rooms />
+            </Route>
+            <Route exact path="/statistics">
               <Statistics />
             </Route>
-            <Route path="/devices">
+            <Route exact path="/devices">
               <Devices />
             </Route>
-            <Route path="/light">
+            <Route exact path="/device">
+              <Device />
+            </Route>
+            <Route exact path="/light">
               <Light />
             </Route>
             <Route path="/">
@@ -31,7 +44,7 @@ function App() {
             </Route>
           </Switch>
         </div>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }
