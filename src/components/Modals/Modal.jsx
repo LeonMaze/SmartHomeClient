@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from '../Cards/Card'
-import * as AiIcons from 'react-icons/ai';
+import CloseIcon from '@mui/icons-material/Close';
 
 import "./Modal.sass"
 
@@ -14,7 +14,7 @@ const Modal = ({ visible, setVisible, title, children }) => {
                         <Card>
                             <div className="modal-header">
                                 <p>{title}</p>
-                                <AiIcons.AiOutlineClose cursor="pointer" size="24" onClick={() => setVisible(false)} />
+                                <CloseIcon sx={{cursor: 'pointer'}} onClick={() => setVisible(false)} />
                             </div>
                             <div className="modal-content">
                                 {children}

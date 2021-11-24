@@ -1,7 +1,7 @@
 import React from 'react'
 
 import "../styles/Devices.sass"
-import NewDevicesList from '../components/Devices/NewDevicesList';
+import SignalsList from '../components/Devices/SignalsList';
 import DevicesList from '../components/Devices/DevicesList';
 
 
@@ -12,7 +12,7 @@ const Devices = () => {
     return (
         <div>
             <h1>Devices</h1>
-            <NewDevicesList/>            
+            <SignalsList/>            
             <DevicesList/>
         </div>
     )

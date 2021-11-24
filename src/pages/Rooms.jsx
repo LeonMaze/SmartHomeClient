@@ -1,12 +1,9 @@
 import React, { useState } from 'react'
 import Card from '../components/Cards/Card'
-import * as MdIcons from 'react-icons/md';
-import * as BsIcons from 'react-icons/bs';
-
+import ImageIcon from '@mui/icons-material/Image';
 import "../styles/Homes.sass"
-import Button from '../components/Button/Button';
-import Input from '../components/Input/Input';
 import Modal from '../components/Modals/Modal';
+import { Button, Input } from '@mui/material';
 const Rooms = () => {
 
     const [addRoomModal, setAddRoomModal] = useState(false)
@@ -18,13 +15,13 @@ const Rooms = () => {
             <div className="actions">
                 <div>
                     <Button onClick={() => setAddRoomModal(true)}>
-                        <BsIcons.BsPlus size="22" />
+                        <ImageIcon />
                         <span>Добавить комнату</span>
                     </Button>
                 </div>
                 <div>
                     <Button>
-                        <BsIcons.BsPlus size="22" />
+                        <ImageIcon />
                     </Button>
                 </div>
             </div>
@@ -32,7 +29,7 @@ const Rooms = () => {
             <div className="rooms">
                 <Card>
                     <div className="card-icon">
-                        <MdIcons.MdOutlineChair size="200" />
+                        <ImageIcon />
                     </div>
                     <div className="card-title">
                         Title
@@ -43,7 +40,7 @@ const Rooms = () => {
                 </Card>
                 <Card>
                     <div className="card-icon">
-                        <MdIcons.MdOutlineChair size="200" />
+                        <ImageIcon />
                     </div>
                     <div className="card-title">
                         Title

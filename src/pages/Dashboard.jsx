@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from '../components/Cards/Card'
 import SwitchWidget from '../widgets/Switch/SwitchWidget'
-import * as AiIcons from 'react-icons/ai';
+import ImageIcon from '@mui/icons-material/Image';
 
 import "../styles/Dashboard.sass"
 import ControlCard from '../widgets/ControlCard/ControlCard';
@@ -19,20 +19,20 @@ const Dashboard = () => {
                     <ControlCard
                         switchId="c1"
                         title="Light"
-                        icon={<AiIcons.AiOutlineHome size="64" color="#000" />} />
+                        icon={<ImageIcon />} />
                     <ControlCard
                         isSelected = {true}
                         switchId="c2"
                         title="Light"
-                        icon={<AiIcons.AiOutlineHome size="64" color="#000" />} />
+                        icon={<ImageIcon />} />
                     <ControlCard
                         switchId="c3"
                         title="Light"
-                        icon={<AiIcons.AiOutlineHome size="64" color="#000" />} />
+                        icon={<ImageIcon />} />
                     <ControlCard
                         switchId="c4"
                         title="Light"
-                        icon={<AiIcons.AiOutlineHome size="64" color="#000" />} />
+                        icon={<ImageIcon />} />
                 </div>
 
                 <Card>

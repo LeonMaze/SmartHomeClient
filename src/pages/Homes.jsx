@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import * as MdIcons from 'react-icons/md';
-import * as BsIcons from 'react-icons/bs';
 
 import "../styles/Homes.sass"
-import Button from '../components/Button/Button';
-import Input from '../components/Input/Input';
 import { useHistory } from 'react-router';
 import { useFetchHomesQuery } from '../store/services/HomeService';
 import HomeCard from '../components/Cards/HomeCard/HomeCard';
 import AddHomeModal from '../components/Modals/AddHomeModal/AddHomeModal';
+
+import ImageIcon from '@mui/icons-material/Image';
+import AddIcon from '@mui/icons-material/Add';
+import { Button, Input } from '@mui/material';
 
 const Home = () => {
 
@@ -23,7 +23,7 @@ const Home = () => {
             <div className="actions">
                 <div>
                     <Button onClick={() => setAddHomeModal(true)}>
-                        <BsIcons.BsPlus size="22" />
+                        <AddIcon />
                         <span>Добавить дом</span>
                     </Button>
                 </div>
@@ -36,7 +36,7 @@ const Home = () => {
                 {homes.map(home =>
                     <HomeCard
                         key={home.id}
-                        home={{...home,decription: "decription", image: <MdIcons.MdOutlineChair size="200" />}}
+                        home={{...home,decription: "decription", image: <ImageIcon sx={{ fontSize: 250 }}/>}}
                         onClick={() => history.push(`/homes/${home.id}`)}/>
                 )}
             </div>

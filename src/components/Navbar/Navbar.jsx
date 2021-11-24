@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
 import { NavbarNames } from './NavbarNames';
-
+import MenuOpenIcon from '@mui/icons-material/MenuOpen';
+import MenuIcon from '@mui/icons-material/Menu';
 import "./Navbar.sass"
 
 function Navbar() {
@@ -17,8 +16,8 @@ function Navbar() {
             <div className={active ? 'navbar active' : 'navbar'}>
                 <div className="navbar-header">
                     { active
-                        ?<AiIcons.AiOutlineClose size="24" onClick={close}/>
-                        :<FaIcons.FaBars size="24" onClick={show} /> }
+                        ?<MenuOpenIcon onClick={close}/>
+                        :<MenuIcon onClick={show} /> }
                 </div>
 
                 <nav className="navbar-items">

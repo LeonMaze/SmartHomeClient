@@ -1,8 +1,9 @@
 import React from 'react'
 import Loader from '../Loader/Loader';
 
-import DeviceItem from './DeviceItem';
+import SignalItem from './SignalItem';
 import {useFetchNewDevicesQuery} from '../../store/services/DeviceService'
+import { useHistory } from 'react-router';
 
 const NewDevicesList = () => {
 
@@ -10,22 +11,20 @@ const NewDevicesList = () => {
         pollingInterval: 1000
     });
 
+    const history = useHistory()
+
     return (
         <>
             <h2>Новые устройства</h2>
             {(isLoading || isError) && <Loader />}
             {!isError &&
-                <table>
-                    {data.map((device) =>
-                        <DeviceItem
-                            key={device.id}
-                            arduino={device.input.arduino}
-                            pin={device.input.pin}
-                            decription={device.input.decription}
-                            state={device.state}
-                        />
-                    )}
-                </table>
+                data.map((signal) =>
+                    <SignalItem
+                        key={signal.id}
+                        signal = {signal}
+                        onClick={() => history.push(`/devices/${signal.input.identifier}`)}
+                    />
+                )
             }
         </>
     )

@@ -5,18 +5,35 @@ export const deviceApi = createApi({
     baseQuery: fetchBaseQuery({baseUrl: 'https://localhost:5001'}),
     tagTypes: ['Devices'],
     endpoints: (build) => ({
+
         fetchDevices: build.query({
             query: () => ({
                 url: `/api/Devices`
             }),
             providesTags: result => ['Devices']
         }),
+
+        fetchDevice: build.query({
+            query: (id) => ({
+                url: `/api/Devices/${id}`
+            }),
+            providesTags: result => ['Devices']
+        }),
+
+        fetchSignals: build.query({
+            query: (identifier) => ({
+                url: `/api/Devices/Signals/${identifier}`
+            }),
+            providesTags: result => ['Devices']
+        }),
+
         fetchNewDevices: build.query({
             query: () => ({
                 url: `/api/Devices/New`
             }),
             providesTags: result => ['Devices']
         }),
+
         updateDevice: build.mutation({
             query: (device) => ({
                 url: `/devices/${device.id}`,
@@ -28,4 +45,9 @@ export const deviceApi = createApi({
     })
 })
 
-export const {useFetchNewDevicesQuery, useFetchDevicesQuery} = deviceApi;
+export const {
+    useFetchNewDevicesQuery, 
+    useFetchDevicesQuery,
+    useFetchDeviceQuery,
+    useFetchSignalsQuery
+} = deviceApi;

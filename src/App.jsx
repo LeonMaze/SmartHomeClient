@@ -1,9 +1,8 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import "./App.sass";
 import Navbar from './components/Navbar/Navbar';
-import Dashboard from './pages/Dashboard'
-import Homes from './pages/Homes'
-import Light from './pages/Light';
+import Dashboard from './pages/Dashboard';
+import Homes from './pages/Homes';
 import Devices from './pages/Devices';
 import Statistics from './pages/Statistics';
 import Rooms from './pages/Rooms';
@@ -33,11 +32,8 @@ function App() {
             <Route exact path="/devices">
               <Devices />
             </Route>
-            <Route exact path="/device">
+            <Route exact path="/devices/:identifier">
               <Device />
-            </Route>
-            <Route exact path="/light">
-              <Light />
             </Route>
             <Route path="/">
               <Dashboard />

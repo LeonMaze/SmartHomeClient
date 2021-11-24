@@ -1,7 +1,7 @@
 import React from 'react'
 import { useFetchDevicesQuery } from '../../store/services/DeviceService';
 import Loader from '../Loader/Loader';
-import DeviceItem from './DeviceItem';
+import DeviceItem from './SignalItem';
 
 const DevicesList = () => {
     

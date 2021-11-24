@@ -1,37 +1,38 @@
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
-import * as IoIcons from 'react-icons/io';
 
+import MemoryIcon from '@mui/icons-material/Memory';
+import HomeIcon from '@mui/icons-material/Home';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import LeaderboardIcon from '@mui/icons-material/Leaderboard';
 
 export const NavbarNames = [
     {
         title: 'Dashboard',
         path: '/dashboard',
-        icon: <FaIcons.FaTachometerAlt size="32" color="#fff"/>,
+        icon: <DashboardIcon sx={{ fontSize: 35, color: '#ffff'}}/>,
         classname: 'icon blue'
     },
     {
         title: 'Homes',
         path: '/homes',
-        icon: <AiIcons.AiOutlineHome size="32" color="#fff"/>,
+        icon: <HomeIcon sx={{ fontSize: 35, color: '#ffff'}}/>,
         classname: 'icon red'
     },
     {
         title: 'Rooms',
         path: '/rooms',
-        icon: <AiIcons.AiOutlineHome size="32" color="#fff"/>,
+        icon: <HomeIcon sx={{ fontSize: 35, color: '#ffff' }}/>,
         classname: 'icon red'
     },
     {
         title: 'Statistics',
         path: '/statistics',
-        icon: <IoIcons.IoIosStats size="32" color="#fff"/>,
+        icon: <LeaderboardIcon sx={{ fontSize: 35, color: '#ffff' }}/>,
         classname: 'icon green'
     },
     {
         title: 'Devices',
         path: '/devices',
-        icon: <IoIcons.IoIosDesktop size="32" color="#fff"/>,
+        icon: <MemoryIcon sx={{ fontSize: 35, color: '#ffff' }}/>,
         classname: 'icon green'
     }
 ]

@@ -1,7 +1,6 @@
+import { Button, Input } from '@mui/material'
 import React, {useState} from 'react'
 import { useCreateHomeMutation } from '../../../store/services/HomeService'
-import Button from '../../Button/Button'
-import Input from '../../Input/Input'
 import Modal from '../Modal'
 
 
