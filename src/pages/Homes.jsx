@@ -8,7 +8,7 @@ import AddHomeModal from '../components/Modals/AddHomeModal/AddHomeModal';
 
 import ImageIcon from '@mui/icons-material/Image';
 import AddIcon from '@mui/icons-material/Add';
-import { Button, Input } from '@mui/material';
+import { Button, Input, Stack, Typography } from '@mui/material';
 
 const Home = () => {
 
@@ -20,28 +20,24 @@ const Home = () => {
         <>
             <h1>Homes</h1>
 
-            <div className="actions">
-                <div>
-                    <Button onClick={() => setAddHomeModal(true)}>
-                        <AddIcon />
-                        <span>Добавить дом</span>
-                    </Button>
-                </div>
-                <div>
-                    <Input placeholder="Поиск..." />
-                </div>
-            </div>
+            <Stack direction="row" justifyContent="space-between">
+                <Input placeholder="Поиск..." />
+                <Button variant="outlined" onClick={() => setAddHomeModal(true)}>
+                    <AddIcon />
+                    <Typography>Добавить дом</Typography>
+                </Button>
+            </Stack>
 
             <div className="rooms">
                 {homes.map(home =>
                     <HomeCard
                         key={home.id}
-                        home={{...home,decription: "decription", image: <ImageIcon sx={{ fontSize: 250 }}/>}}
-                        onClick={() => history.push(`/homes/${home.id}`)}/>
+                        home={{ ...home, decription: "decription", image: <ImageIcon sx={{ fontSize: 250 }} /> }}
+                        onClick={() => history.push(`/homes/${home.id}`)} />
                 )}
             </div>
 
-            <AddHomeModal visible={addHomeModal} setVisible={setAddHomeModal}/>
+            <AddHomeModal open={addHomeModal} setOpen={setAddHomeModal} />
         </>
     )
 }

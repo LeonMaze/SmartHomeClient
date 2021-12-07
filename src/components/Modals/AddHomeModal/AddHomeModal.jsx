@@ -1,42 +1,42 @@
-import { Button, Input } from '@mui/material'
-import React, {useState} from 'react'
+import { Button, Dialog, DialogContent, DialogActions, DialogTitle, TextField } from '@mui/material'
+import React, { useState } from 'react'
 import { useCreateHomeMutation } from '../../../store/services/HomeService'
-import Modal from '../Modal'
 
 
-const AddHomeModal = ({visible, setVisible}) => {
+const AddHomeModal = ({ open, setOpen }) => {
 
-    const [home, setHome] = useState({name: ""})
+    const [home, setHome] = useState({ name: "" })
 
     const [createHome] = useCreateHomeMutation();
 
-    const AddHome = () => {
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const handleSave = () => {
         createHome(home)
-        setVisible(false)
+        setOpen(false)
     }
 
     return (
         <>
-            <Modal
-                visible={visible}
-                setVisible={setVisible}
-                title="Добавить дом">
-
-                <div>Название дома:</div>
-                <Input 
-                    value={home.name} 
-                    placeholder="Введите название" 
-                    onChange={(e) => setHome({...home, name: e.target.value})} />
-
-                <div className="modal-actions">
-                    <Button onClick={() => setVisible(false)}>
-                        Отменить
-                    </Button>
-                    <Button onClick={AddHome}>
-                        Добавить
-                    </Button>
-                </div>
-            </Modal>
+            <Dialog open={open} onClose={handleClose}>
+                <DialogTitle>Add home</DialogTitle>
+                <DialogContent>
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        label="Home"
+                        type="text"
+                        fullWidth
+                        variant="standard"
+                    />
+                </DialogContent>
+                <DialogActions>
+                    <Button variant="outlined" onClick={handleClose}>Cancel</Button>
+                    <Button variant="outlined" onClick={handleSave}>Save</Button>
+                </DialogActions>
+            </Dialog>
         </>
     )
 }

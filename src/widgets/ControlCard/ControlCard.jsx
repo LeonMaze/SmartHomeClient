@@ -1,21 +1,23 @@
+import { Stack, Switch, Typography } from '@mui/material'
 import React from 'react'
 import Card from '../../components/Cards/Card'
-import SwitchCheckbox from '../../components/Switch/SwitchCheckbox'
 
 import "./ControlCard.sass"
 
-const ControlCard = ({isToggle, onToggle, icon, title, switchId, isSelected, onClick}) => {
+const ControlCard = ({isToggle, onToggle, icon, title, isSelected, onClick}) => {
     
     return (
-        <Card className={`control-card ${isSelected? "control-card--selected": ""}`} onClick={onClick}>
-            <div className="flex flex-space-beetwen">
-                <span>{isToggle? "ON" : "OFF"}</span>
-                <SwitchCheckbox switchId={switchId} isToggle={isToggle} handleToggle={onToggle} />
-            </div>
-            <div>
+        <Card className={`control-card ${isSelected && "control-card--selected"}`} onClick={onClick}>
+            <Stack spacing={2}>
+                <Stack direction="row" justifyContent="space-between" alignItems="center">
+                    {isSelected 
+                        ? <Typography>ON</Typography> 
+                        : <Typography>OFF</Typography>}
+                    <Switch value={isToggle} onChange={onToggle}/>
+                </Stack>
                 {icon}
-            </div>
-            <p>{title}</p>
+                <Typography>{title}</Typography>          
+            </Stack>
         </Card>
     )
 }

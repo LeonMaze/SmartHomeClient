@@ -6,7 +6,7 @@ import SwitchWidget from '../widgets/Switch/SwitchWidget'
 import Card from '../components/Cards/Card'
 import { useDeleteHomeMutation, useFetchHomeQuery } from '../store/services/HomeService'
 import { useHistory, useParams } from 'react-router'
-import { Button, IconButton, Stack } from '@mui/material'
+import { Button, IconButton, Stack, Typography } from '@mui/material'
 
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ImageIcon from '@mui/icons-material/Image';
@@ -33,10 +33,10 @@ const Home = () => {
                     alignItems="center"
                     spacing={2}
                 >
-                    <IconButton onClick={()=> history.goBack()}>
+                    <IconButton onClick={() => history.goBack()}>
                         <ArrowBackIosNewIcon />
                     </IconButton>
-                    <h1>Home {!isLoading && home.name}</h1>
+                    <h1>Home </h1>
                 </Stack>
                 <Stack direction="row">
                     <Button >Изменить</Button>
@@ -45,59 +45,56 @@ const Home = () => {
             </Stack>
 
 
-            <div className="flex">
-                <div className="content">
-                    <Stack direction="row" justifyContent="space-between">
-                        <h2>Показатели</h2>
+            <Stack direction="row" spacing={2}>
+                <Stack width={1} spacing={2}>
+                    <Stack direction="row" justifyContent="space-between" alignItems="center">
+                        <Typography>Показатели</Typography>
                         <IconButton>
-                            <MoreVertIcon/>
+                            <MoreVertIcon />
                         </IconButton>
                     </Stack>
-                    <div className="card-layout flex">
+                    <Stack direction="row" spacing={2}>
                         <ParametrCard />
                         <ParametrCard />
                         <ParametrCard />
-                    </div>
+                    </Stack>
 
-                    <Stack direction="row" justifyContent="space-between">
-                        <h2>Комнаты</h2>
+                    <Stack direction="row" justifyContent="space-between" alignItems="center">
+                        <Typography>Комнаты</Typography>
                         <Stack direction="row">
                             <Button>Добавить</Button>
                             <IconButton>
-                                <MoreVertIcon/>
+                                <MoreVertIcon />
                             </IconButton>
                         </Stack>
                     </Stack>
 
-                    <div className="card-layout flex">
-                        <Card className="flex-center-column">
-                            <div>
+                    <Stack direction="row" spacing={2}>
+                        <Card>
+                            <Stack width={1} alignItems="center" spacing={2}>
                                 <ImageIcon />
-                            </div>
-                            <div>
-                                Title
-                            </div>
+                                <Typography>Title</Typography>
+                            </Stack>
                         </Card>
-                        <Card className="flex-center-column">
-                            <div>
+                        <Card>
+                            <Stack width={1} alignItems="center" spacing={2}>
                                 <ImageIcon />
-                            </div>
-                            <div>
-                                Title
-                            </div>
+                                <Typography>Title</Typography>
+                            </Stack>
                         </Card>
-                        <Card className="flex-center-column">
-                            <div>
+                        <Card>
+                            <Stack width={1} alignItems="center" spacing={2}>
                                 <ImageIcon />
-                            </div>
-                            <div>
-                                Title
-                            </div>
+                                <Typography>Title</Typography>
+                            </Stack>
                         </Card>
-                    </div>
-                </div>
-                <div className="sidebar">
-                    <h2>Устройства</h2>
+                    </Stack>
+                </Stack>
+                <Stack spacing={2}>
+                    <Typography>
+                        Устройства
+                    </Typography>
+
                     <SwitchWidget
                         switchId="right-block1"
                         title="My Widget"
@@ -110,8 +107,8 @@ const Home = () => {
                         switchId="right-block3"
                         title="My Widget"
                         description="It's working!!!" />
-                </div>
-            </div>
+                </Stack>
+            </Stack>
 
         </div>
     )

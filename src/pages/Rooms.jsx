@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Card from '../components/Cards/Card'
 import ImageIcon from '@mui/icons-material/Image';
 import "../styles/Homes.sass"
-import Modal from '../components/Modals/Modal';
 import { Button, Input } from '@mui/material';
 const Rooms = () => {
 
@@ -50,24 +49,6 @@ const Rooms = () => {
                     </div>
                 </Card>
             </div>
-
-            <Modal
-                visible={addRoomModal}
-                setVisible={setAddRoomModal}
-                title="Добавить комнату">
-
-                <div>Название комнаты:</div>
-                <Input placeholder="Введите название" />
-
-                <div className="modal-actions">
-                    <Button onClick={() => setAddRoomModal(false)}>
-                        Отменить
-                    </Button>
-                    <Button>
-                        Добавить
-                    </Button>
-                </div>
-            </Modal>
         </>
     )
 }
